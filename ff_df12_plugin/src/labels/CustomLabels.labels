@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>PageAdjustOpportunityAdjAmtLabel</fullName>
+        <categories>label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PageAdjustOpportunityAdjAmtLabel</shortDescription>
+        <value>Adjustment amount (+/-%)</value>
+    </labels>
+    <labels>
+        <fullName>PageAdjustOpportunityAdjustedAmount</fullName>
+        <categories>label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PageAdjustOpportunityAdjustedAmount</shortDescription>
+        <value>Adjusted Amount</value>
+    </labels>
+    <labels>
+        <fullName>PageAdjustOpportunityAdjustedSalesPrice</fullName>
+        <categories>label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PageAdjustOpportunityAdjustedSalesPrice</shortDescription>
+        <value>Adjusted Sales Price</value>
+    </labels>
+    <labels>
+        <fullName>PageAdjustOpportunityAdjustmentTitle</fullName>
+        <categories>title</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PageAdjustOpportunityAdjustmentTitle</shortDescription>
+        <value>Adjustment</value>
+    </labels>
+    <labels>
+        <fullName>PageAdjustOpportunityCancel</fullName>
+        <categories>label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PageAdjustOpportunityCancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>PageAdjustOpportunityDetailTitle</fullName>
+        <categories>title</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PageAdjustOpportunityDetailTitle</shortDescription>
+        <value>Opportunity Detail</value>
+    </labels>
+    <labels>
+        <fullName>PageAdjustOpportunityFunctionalDescription</fullName>
+        <categories>description</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PageAdjustOpportunityFunctionalDescription</shortDescription>
+        <value>Enter a percentage adjustment for the Opportunity and its lines</value>
+    </labels>
+    <labels>
+        <fullName>PageAdjustOpportunityPageTitle</fullName>
+        <categories>title</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PageAdjustOpportunityPageTitle</shortDescription>
+        <value>Adjust Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>PageAdjustOpportunityPreview</fullName>
+        <categories>label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PageAdjustOpportunityPreview</shortDescription>
+        <value>Preview</value>
+    </labels>
+    <labels>
+        <fullName>PageAdjustOpportunityProductsTitle</fullName>
+        <categories>title</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PageAdjustOpportunityProductsTitle</shortDescription>
+        <value>Opportunity Products</value>
+    </labels>
+    <labels>
+        <fullName>PageAdjustOpportunitySave</fullName>
+        <categories>label</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PageAdjustOpportunitySave</shortDescription>
+        <value>Make Adjustment</value>
+    </labels>
+    <labels>
+        <fullName>PluginAdjustedValuesMustBePositive</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PluginAdjustedValuesMustBePositive</shortDescription>
+        <value>Opportunity values cannot be adjusted to be less than zero</value>
+    </labels>
+    <labels>
+        <fullName>PluginClassNotFound</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PluginClassNotFound</shortDescription>
+        <value>Could not find plugin {0}</value>
+    </labels>
+</CustomLabels>

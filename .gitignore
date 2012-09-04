@@ -4,3 +4,5 @@ salesforce.schema
 Referenced Packages
 .svn
 .DS_Store
+.metadata
+package.xml
