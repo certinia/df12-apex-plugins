@@ -14,6 +14,10 @@ Apex-driven processing in packaged solutions is becoming more and more complex o
 Stephen Willcock, FinancialForce.com  
 [@stephenwillcock](https://twitter.com/stephenwillcock)
 
+###Slides
+[www.slideshare.net/stephenwillcock/apex-plugins](http://www.slideshare.net/stephenwillcock/apex-plugins)
+
+
 Repository
 ----------
 
