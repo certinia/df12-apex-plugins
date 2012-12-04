@@ -24,7 +24,7 @@ Repository
 This repository contains all the code that was used to build a sample Force.com managed package to demonstrate the Plugin technique - [ff_df12_plugin](financialforcedev/df12-apex-plugins/tree/master/ff_df12_plugin), 
 and a very simple [Plugin class](financialforcedev/df12-apex-plugins/tree/master/unpackaged) to accompany it.
 
-If you want to play with the plugin, you can [install the managed package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tE0000000Dluc). The package has deliberately been left in beta - it is provided purely for demonstrating the Plugin technique.
+If you want to play with the plugin, you can [install the managed package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tE0000000DmLn). The package has deliberately been left in beta - it is provided purely for demonstrating the Plugin technique.
 
 More usage details to follow after Dreamforce.
 
