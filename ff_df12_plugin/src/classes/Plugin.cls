@@ -103,7 +103,9 @@ global class Plugin
 		PluginSettings__c pluginSettings = PluginSettings__c.getInstance(interfaceKey);
 		if(pluginSettings==null)
 			return null;
-		Type t = Type.forName(pluginSettings.ApexClassName__c);
+		// From Winter'13 Type.forName(String) in a managed package does not resolve unmanaged (local) apex class
+		// Namespace must explicitly be set to an empty value to reference an unmanaged class  
+		Type t = Type.forName(pluginSettings.NamespacePrefix__c,pluginSettings.ApexClassName__c); 
 		if(t==null)
 			throw new PluginException(Messages.getPluginClassNotFound(pluginSettings.ApexClassName__c));
 		return t.newInstance();
@@ -120,11 +122,18 @@ global class Plugin
 	
 
 
+	/*
+	 * Tests
+	 */
+
+	// Test values
+	
+	static final String TEST_KEY = 'ICanBeTested';
+	static final String TEST_NAME = 'Plugin.DefaultCanBeTested';
+	static final String NAMESPACE = 'ff_df12_plugin';
 
 	// Test classes
 	
-	static final String KEY_CAN_BE_TESTED = 'ICanBeTested';
-
 	interface ICanBeTested
 	{
 		String invoke(String arg);
@@ -147,7 +156,7 @@ global class Plugin
 		// test no plugin configured
 		system.assert(getInstanceIAdjustOpportunities() != null);
 		// test plugin configured
-		insert new PluginSettings__c(Name=KEY_ADJUST_OPPORTUNITIES,ApexClassName__c=DefaultAdjustOpportunities.class.getName());	
+		insert new PluginSettings__c(Name=KEY_ADJUST_OPPORTUNITIES,NamespacePrefix__c=NAMESPACE,ApexClassName__c='Plugin.DefaultAdjustOpportunities');	
 		system.assert(getInstanceIAdjustOpportunities() != null);
 		getInstanceIAdjustOpportunities().adjust(new Opportunity(Amount=100), new List<OpportunityLineItem>(), Decimal.valueOf(0));
 	}
@@ -171,7 +180,7 @@ global class Plugin
 		// test no plugin configured
 		system.assert(getInstanceIValidateOpportunityAdjustments() != null);
 		// test plugin configured
-		insert new PluginSettings__c(Name=KEY_VALIDATE_OPPORTUNITY_ADJUSTMENTS,ApexClassName__c=DefaultValidateOpportunityAdjustments.class.getName());	
+		insert new PluginSettings__c(Name=KEY_VALIDATE_OPPORTUNITY_ADJUSTMENTS,NamespacePrefix__c=NAMESPACE,ApexClassName__c='Plugin.DefaultValidateOpportunityAdjustments');	
 		system.assert(getInstanceIValidateOpportunityAdjustments() != null);
 		getInstanceIValidateOpportunityAdjustments().validate(new Opportunity(Amount=0), new List<OpportunityLineItem>(), Decimal.valueOf(0));
 	}
@@ -242,8 +251,8 @@ global class Plugin
 	@isTest
 	static void testGetInstance()
 	{
-		insert new PluginSettings__c(Name=KEY_CAN_BE_TESTED,ApexClassName__c=DefaultCanBeTested.class.getName());	
-		Object o = getInstance(KEY_CAN_BE_TESTED);
+		insert new PluginSettings__c(Name=TEST_KEY,NamespacePrefix__c=NAMESPACE,ApexClassName__c=TEST_NAME);	
+		Object o = getInstance(TEST_KEY);
 		system.assert(o != null);
 		system.assert(o instanceof DefaultCanBeTested);
 		ICanBeTested result = (ICanBeTested) o;
@@ -253,7 +262,7 @@ global class Plugin
 	@isTest
 	static void testGetInstanceNull()
 	{
-		Object result = getInstance(KEY_CAN_BE_TESTED);
+		Object result = getInstance(TEST_KEY);
 		system.assertEquals(null, result);
 	}
 
@@ -261,12 +270,12 @@ global class Plugin
 	static void testGetInstanceBadClassName()
 	{
 		// Note - cannot use a non-existent inner class for a 'bad' class name: "System.UnexpectedException: Salesforce System Error"
-		String className = Plugin.class.getName() + 'DoesNotExist';  
+		String className = 'DoesNotExist';  
 
-		insert new PluginSettings__c(Name=KEY_CAN_BE_TESTED,ApexClassName__c=className);	
+		insert new PluginSettings__c(Name=TEST_KEY,NamespacePrefix__c=NAMESPACE,ApexClassName__c=className);	
 		try
 		{
-			getInstance(KEY_CAN_BE_TESTED);
+			getInstance(TEST_KEY);
 			system.assert(false,'Exception not thrown');
 		}
 		catch(Exception e)

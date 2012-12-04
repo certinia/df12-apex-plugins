@@ -12,5 +12,14 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>NamespacePrefix__c</fullName>
+        <externalId>false</externalId>
+        <label>Namespace Prefix</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <label>Plugin Settings</label>
 </CustomObject>
